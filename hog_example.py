@@ -10,8 +10,15 @@ class hogImg():
         self.oriens = oriens
         self.ppc = ppc
         self.cpc = cpc
-        if int(self.arr.shape[0]/self.ppc[0])-(self.cpc[0]+1) < 0:
+        if int(self.arr.shape[0])/self.ppc[0]-self.cpc[0]+1 < 0:
             raise(ValueError("wrong dimensions - ensure array is larger or change cpc to a smaller number!"))
+
+    def __repr__(self):
+        return f"hogImg class with orientation: {self.oriens} ppc: {self.ppc} cpc: {self.cpc}"
+
+    def __str__(self):
+        return f"input array is {self.arr.shape} with orientation {self.oriens} and ppc {self.ppc} and cpc {self.cpc}"
+
         
     def hog_normalize_block(self, blk, eps=1e-6):
         norma = blk/np.sqrt(np.sum(blk ** 2) + eps ** 2)

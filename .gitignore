@@ -260,3 +260,7 @@ paket-files/
 __pycache__/
 *.pyc"
 venv/
+Hog_example.egg-info/
+build/
+dist/
+.vs/
